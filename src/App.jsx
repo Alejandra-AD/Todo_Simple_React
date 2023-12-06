@@ -6,7 +6,7 @@ const App = () => {
     <>
       <div className="container mt-2">
         
-        <h1>APP</h1>
+        <h1>ToDo App</h1>
         <Formulario/>
         
         </div>
