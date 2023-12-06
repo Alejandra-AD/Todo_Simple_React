@@ -1,3 +1,4 @@
+import Formulario from "./components/Formulario"; 
 
 const App = () => {
   return (
@@ -6,8 +7,7 @@ const App = () => {
       <div className="container mt-2">
         
         <h1>APP</h1>
-        
-        
+        <Formulario/>
         
         </div>
     </>
