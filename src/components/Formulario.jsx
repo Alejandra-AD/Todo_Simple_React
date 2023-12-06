@@ -26,13 +26,13 @@ const Formulario = () => {
 
     const handleChange = (e) => {
 
-        const{name,type,}= e.target;
+        const{name,type,checked,value}= e.target;
         console.log(name);
 
-        setTodo({ ...todo, [name]: e.target.value })
+        setTodo({
 
-
-
+            ...todo,//copia todas las propiedades presentes en el objeto todo.
+            [name]: type === "checkbox"? checked: value})// Si el tipo de entrada es un checkbox, asigna el valor de 'checked'; de lo contrario, usa el valor de 'value'.
     };
 
 
@@ -43,10 +43,10 @@ const Formulario = () => {
             <input type="text" name="title" className="form-control mb-2" placeholder="Ingrese ToDo" value={title} onChange={handleChange}/>
             <textarea name="description" className="form-control mb-2" placeholder="Ingrese descripción de la tarea" value={description} onChange={handleChange}></textarea>
             <div>
-                <input type="checkbox" name="priority" className="form-check-input mb-2 mx-1" id="inputCheck"/>
+                <input type="checkbox" name="priority" className="form-check-input mb-2 mx-1" id="inputCheck" checked = {priority} onChange={handleChange}/>
                 <label htmlFor="inputCheck"> Dar prioridad</label>
             </div>
-            <select name="state" className="form-select mb-2">
+            <select name="state" className="form-select mb-2" value={state} onChange={handleChange}>
                 <option value="incomplete">Pendiente</option>
                 <option value="complete">Completada</option>
             </select>
