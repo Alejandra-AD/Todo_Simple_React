@@ -23,15 +23,15 @@ const Formulario = () => {
 
         console.log(title, description, priority, state);
 
-        validaciones
+        //validaciones
 
-        if(!title.trim()||!description.trim()){
+        // if(!title.trim()||!description.trim()){
 
-            setError(true);
-            return;
-        }else{
-            setError(false);
-        }
+        //     setError(true);
+        //     return;
+        // }else{
+        //     setError(false);
+        // }
 
     };
 
@@ -47,11 +47,10 @@ const Formulario = () => {
         })// Si el tipo de entrada es un checkbox, asigna el valor de 'checked'; de lo contrario, usa el valor de 'value'.
 
 
-        //validación para mostrar en tiempo real 
+        //validación para mostrar en tiempo real (funcionando)
         if (name === "title" || name === "description") {
 
             if (!value.trim()) {
-
                 setError(true);
                 return;
             } else {
