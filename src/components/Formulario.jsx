@@ -38,7 +38,7 @@ const Formulario = () => {
     const handleChange = (e) => {
 
         const { name, type, checked, value } = e.target;
-        console.log(name);
+        // console.log(name);
 
         setTodo({
 
