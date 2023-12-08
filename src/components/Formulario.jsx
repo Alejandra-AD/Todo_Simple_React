@@ -64,7 +64,7 @@ const Formulario = () => {
 
         <form onSubmit={handleSubmit}>
 
-            {error && <div className="alert alert-danger">Todos los campos son requeridos</div>}
+            {error && <div className="alert alert-success">Todos los campos son requeridos</div>}
 
             <input type="text" name="title" className="form-control mb-2" placeholder="Ingrese ToDo" value={title} onChange={handleChange} />
             <textarea name="description" className="form-control mb-2" placeholder="Ingrese descripción de la tarea" value={description} onChange={handleChange}></textarea>
