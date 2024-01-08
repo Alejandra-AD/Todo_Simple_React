@@ -33,12 +33,18 @@ const App = () => {
 
   const [todos, setTodo]= useState(initialTodos);
 
+  const addTodo = (todo) => {
+
+    setTodo([...todos, todo]); //copio todos los todos y agrego el nuevo desde formulario 
+
+  }
+
   return (
     <>
       <div className="container mb-2">
         
         <h1>ToDo App</h1>
-        <Formulario/>
+        <Formulario addTodo={addTodo}/>
         <Todos todos = {todos}/>
         
         

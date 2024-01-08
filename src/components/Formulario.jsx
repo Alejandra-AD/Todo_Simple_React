@@ -1,7 +1,7 @@
 import Swal from 'sweetalert2';
 import { useState } from 'react';
 
-const Formulario = () => {
+const Formulario = ({addTodo}) => {
 
     const [error, setError] = useState(false);
 
@@ -36,6 +36,15 @@ const Formulario = () => {
         }else{
             setError(false);
         }
+
+        addTodo({
+
+            id:Date.now(),
+            ...todo,state : state === 'complete',
+
+        });
+
+
 
     };
 
