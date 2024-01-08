@@ -44,6 +44,14 @@ const Formulario = ({addTodo}) => {
 
         });
 
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Tarea agregada",
+            showConfirmButton: false,
+            timer: 1500
+          });
+
 
 
     };
