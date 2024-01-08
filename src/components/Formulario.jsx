@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 import { useState } from 'react';
 
 const Formulario = () => {
@@ -25,13 +26,16 @@ const Formulario = () => {
 
         //validaciones
 
-        // if(!title.trim()||!description.trim()){
+        if(!title.trim()||!description.trim()){
 
-        //     setError(true);
-        //     return;
-        // }else{
-        //     setError(false);
-        // }
+            return Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Todos los campos son requeridos",
+              });
+        }else{
+            setError(false);
+        }
 
     };
 
@@ -80,7 +84,7 @@ const Formulario = () => {
 
         </form>
             
-            
+        
     )
 
 
