@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Formulario from "./components/Formulario"; 
 import Todos from "./components/Todos";
+import Todo from "./components/Todo";
 
 
 
