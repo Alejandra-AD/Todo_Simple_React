@@ -3,6 +3,7 @@ import Todo from './Todo';
 
 const Todos = ({ todos,deleteTodo,updateTodo }) => {
 
+
     return (
 
             <div className="mt-5">
@@ -12,6 +13,11 @@ const Todos = ({ todos,deleteTodo,updateTodo }) => {
                         // <li key={todo.id}>{todo.title}</li> //recordar siempre pasar la key
                         <Todo todo={todo} deleteTodo={deleteTodo} updateTodo={updateTodo}/>
                     ))}
+
+                     {
+                        todos.length === 0 && (<li className='list-group-item text-center'> Sin tareas 📝 </li>)
+                     }
+                     
                 </ul>
             </div>
 
