@@ -9,9 +9,9 @@ const Todos = ({ todos,deleteTodo,updateTodo }) => {
             <div className="mt-5">
                 <h2 className="text-center mb-5">Todos</h2>
                 <ul className='list-group'>
-                    {todos.map(todo => (//iterando el array de objetos con map
+                    {todos.map(todo => (//iterando el array de objetos con map , recordar que map necesita key
                         // <li key={todo.id}>{todo.title}</li> //recordar siempre pasar la key
-                        <Todo todo={todo} deleteTodo={deleteTodo} updateTodo={updateTodo}/>
+                        <Todo key ={todo.id} todo={todo} deleteTodo={deleteTodo} updateTodo={updateTodo}/>
                     ))}
 
                      {
