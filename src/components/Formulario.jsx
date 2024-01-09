@@ -14,15 +14,13 @@ const Formulario = ({addTodo}) => {
 
     });
 
+    const { id,title, description, priority, state } = todo; // object destructuring
 
-    const { title, description, priority, state } = todo; // object destructuring
 
     const handleSubmit = (e) => {
 
         e.preventDefault();
         // console.log('me diste click');        
-
-        console.log(title, description, priority, state);
 
         //validaciones
 
@@ -53,8 +51,8 @@ const Formulario = ({addTodo}) => {
           });
 
 
-
     };
+
 
     const handleChange = (e) => {
 
