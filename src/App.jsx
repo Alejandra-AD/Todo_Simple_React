@@ -57,13 +57,25 @@ const App = () => {
     setTodo(updateTodoArray);
   }
 
+  const orderTodo = (orderTodoArray) => { 
+
+     return orderTodoArray = todos.sort((todoA,todoB) => {
+
+      if(todoA.priority === todoB.priority) return 0; //si tareas tiene misma prioridad se mantiene el orden actual
+      if(todoA.priority) return -1; //si tarea A (todoA) tiene prioridad (true), se mueve hacia arriba en el orden actual
+      if(!todoA.priority) return 1;  //si tarea A (todoA) no tiene prioridad (false), se mueve hacia abajo en el orden actual
+
+     })
+
+  }
+
   return (
     <>
       <div className="container mb-2">
         
         <h1>ToDo App</h1>
         <Formulario addTodo={addTodo}/>
-        <Todos todos = {todos} deleteTodo = {deleteTodo} updateTodo={updateTodo}/>
+        <Todos todos = {orderTodo(todos)} deleteTodo = {deleteTodo} updateTodo={updateTodo}/>
         
         </div>
     </>
