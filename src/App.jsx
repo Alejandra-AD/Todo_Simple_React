@@ -45,8 +45,17 @@ const App = () => {
     const filterTodoArray = (todos.filter(todo => todo.id !== id));// filtrando todos los todo con id diferente al id enviado
     setTodo(filterTodoArray);
 
-
   };
+
+  const updateTodo = (id)=>{
+
+    const updateTodoArray = todos.map(todo=>{
+      if (todo.id === id){todo.state = !todo.state}   
+      return todo;
+    }
+      )
+    setTodo(updateTodoArray);
+  }
 
   return (
     <>
@@ -54,7 +63,7 @@ const App = () => {
         
         <h1>ToDo App</h1>
         <Formulario addTodo={addTodo}/>
-        <Todos todos = {todos} deleteTodo = {deleteTodo}/>
+        <Todos todos = {todos} deleteTodo = {deleteTodo} updateTodo={updateTodo}/>
         
         </div>
     </>
