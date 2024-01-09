@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Formulario from "./components/Formulario"; 
 import Todos from "./components/Todos";
-import Todo from "./components/Todo";
+
 
 
 
@@ -40,14 +40,21 @@ const App = () => {
 
   }
 
+  const deleteTodo = (id) => {//enviando id 
+
+    const filterTodoArray = (todos.filter(todo => todo.id !== id));// filtrando todos los todo con id diferente al id enviado
+    setTodo(filterTodoArray);
+
+
+  };
+
   return (
     <>
       <div className="container mb-2">
         
         <h1>ToDo App</h1>
         <Formulario addTodo={addTodo}/>
-        <Todos todos = {todos}/>
-        
+        <Todos todos = {todos} deleteTodo = {deleteTodo}/>
         
         </div>
     </>
